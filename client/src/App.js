@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <form>
-        Name: <input type="text"></input>
+        Username: <input type="text"></input>
+        Passwork: <input type="text"></input>
         <button>Submit</button>
       </form>
     </div>
