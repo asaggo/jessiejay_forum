@@ -7,7 +7,8 @@ function App() {
     <div className="App">
       <form>
         Name: <input type="text"></input>
-        <button>Submit</button>
+        <button>Sign Up</button>
+        <button>Sign In</button>
       </form>
     </div>
   );
