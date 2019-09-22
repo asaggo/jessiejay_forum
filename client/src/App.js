@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import Login from './components/Login';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <form>
-        Name: <input type="text"></input>
-        <button>Sign Up</button>
-        <button>Sign In</button>
-      </form>
+      Hello World
+      <Login></Login>
+      {/* <form>
+        Username: <input type="text"></input>
+        Passwork: <input type="text"></input>
+        <button>Submit</button>
+      </form> */}
     </div>
   );
 }
