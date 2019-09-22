@@ -7,7 +7,8 @@ class Login extends Component{
     render(){
         return(
             <div>
-                <Button type="primary">Button</Button>
+                <Button type="primary">Sign In</Button>
+                <Button type="primary">Sign Up</Button>
             </div>
         );
     }
