@@ -1,4 +1,10 @@
 
-.App {
+.App{
   text-align: center;
+}
+.wrapper {
+  /* align: center; */
+  text-align: left;
+  display: inline-block;
+  width: 400px;
 }

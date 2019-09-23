@@ -1,12 +1,15 @@
 import React from 'react';
 import Login from './components/Login';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      Hello World
-      <Login></Login>
+      <div className="wrapper">
+        <Login />
+      </div>
+      
       {/* <form>
         Username: <input type="text"></input>
         Passwork: <input type="text"></input>
