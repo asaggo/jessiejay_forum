@@ -1,15 +1,33 @@
 import React, {Component} from 'react';
-import Button from 'antd/es/button';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import './Login.css';
 
 import './Login.css';
 
 class Login extends Component{
     render(){
         return(
-            <div>
-                <Button type="primary">Sign In</Button>
-                <Button type="primary">Sign Up</Button>
-            </div>
+           <Form className="formWrapper">
+               <Form.Group>
+                   <Form.Label>Enter your Username</Form.Label>
+                   <Form.Control placeholder="your username"/>
+                   <Form.Text className="text-muted">
+                       username is different from your email address.
+                   </Form.Text>
+               </Form.Group>
+
+               <Form.Group>
+                   <Form.Label>Enter your password</Form.Label>
+                   <Form.Control type="password" placeholder="your password"/>
+                   <Form.Text className="text-muted">
+                       We'll never spill the beans.
+                   </Form.Text>
+               </Form.Group>
+
+               <Button variant="outline-primary" className="btn">Sign In</Button>
+               <Button variant="outline-primary" className="btn">Sign Up</Button>
+           </Form> 
         );
     }
 }

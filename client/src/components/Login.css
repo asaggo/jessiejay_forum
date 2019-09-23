@@ -1,1 +1,6 @@
-@import '~antd/dist/antd.css';
+.btn{
+    margin-left: 5px;
+}
+.formWrapper{
+    padding-top: 50px;
+}
