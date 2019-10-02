@@ -1,20 +1,19 @@
 import React from 'react';
 import Login from './components/Login';
+import Signup from './components/SignUp';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <div className="wrapper">
-        <Login />
-      </div>
-      
-      {/* <form>
-        Username: <input type="text"></input>
-        Passwork: <input type="text"></input>
-        <button>Submit</button>
-      </form> */}
+      <Router>
+        <div className="wrapper">
+          <Route exact path="/" component={Login}/> 
+          <Route path="/signup" component={Signup}/> 
+        </div>
+      </Router>
     </div>
   );
 }
