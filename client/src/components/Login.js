@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Login.css';
-
+import {Link} from 'react-router-dom';
 import './Login.css';
 
 class Login extends Component{
@@ -13,7 +12,7 @@ class Login extends Component{
                    <Form.Label>Enter your Username</Form.Label>
                    <Form.Control placeholder="your username"/>
                    <Form.Text className="text-muted">
-                       username is different from your email address.
+                       Username is different from your email address.
                    </Form.Text>
                </Form.Group>
 
@@ -26,7 +25,10 @@ class Login extends Component{
                </Form.Group>
 
                <Button variant="outline-primary" className="btn">Sign In</Button>
-               <Button variant="outline-primary" className="btn">Sign Up</Button>
+               <Link to="/signup">
+                    <Button variant="outline-primary" className="btn" >Sign Up</Button>
+               </Link>
+               
            </Form> 
         );
     }
