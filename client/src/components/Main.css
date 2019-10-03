@@ -1,0 +1,18 @@
+.wrapper{
+    width: 800px;
+    padding-top: 25px;
+}
+
+.divider{
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+}
+.createBtn{
+    margin-left: 0px;
+    align-items: left; 
+    float: left;
+}
+
+.mainTable{
+    text-align: left;
+}

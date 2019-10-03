@@ -1,6 +1,14 @@
-.btn{
+.formWrapper{
+    width: 400px;
+    padding-top: 50px;
+    display: inline-block;
+    text-align: left;
+}
+
+.signUpBtn{
     margin-left: 5px;
 }
-.formWrapper{
-    padding-top: 50px;
+
+.signInBtn{
+    margin-left: 0px;
 }
