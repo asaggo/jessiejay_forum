@@ -188,13 +188,13 @@ class SignUp extends Component{
                     </Form.Text>
                 </Form.Group>
                 
-                    <Button 
-                        variant="primary" 
-                        className="btn" 
-                        type="submit" 
-                    >
-                        Submit
-                    </Button>
+                <Button 
+                    variant="primary" 
+                    className="btn" 
+                    type="submit" 
+                >
+                    Submit
+                </Button>
             </Form>
         );
     }
