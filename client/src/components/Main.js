@@ -28,6 +28,10 @@ class Main extends Component{
         })
     }
 
+    handleSubmit=()=>{
+        this.props.history.push('/createPost');
+    }
+
     render(){
         return(
             <div className="wrapper">
@@ -46,7 +50,7 @@ class Main extends Component{
                         {this.renderTableData()}
                     </tbody>
                 </Table>
-                <Button variant="outline-primary" className="createBtn">Create</Button>
+                <Button variant="outline-primary" className="createBtn" onClick={this.handleSubmit}>Create</Button>
             </div>
         );
     }
