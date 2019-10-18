@@ -2,8 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
 const app = express();
+const bodyParser = require('body-parser');
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const SELECT_ALL_USERS_QUERY = 'SELECT * FROM react_forum.user';
+
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -17,11 +22,27 @@ connection.connect(err =>{
     }
 });
 
-app.use(cors());
+
 
 app.get('/', (req, res)=>{
     res.send('go to /users to see users');
 });
+
+app.post('/login', (req, res)=>{
+    req.setTimeout(0) // no timeout
+    const {data} = req.body;
+    console.log('serverside data: ', data);
+    const FIND_USER_QUERY = `SELECT * FROM react_forum.user WHERE username = '${data}'`;
+    connection.query(FIND_USER_QUERY, (err, results)=>{
+        if(err){
+            console.log('invalid username');
+        }
+        else{
+            console.log('found your username');
+        }
+    })
+
+})
 
 app.get('/users', (req, res)=>{
     connection.query(SELECT_ALL_USERS_QUERY, (err, results)=>{
