@@ -105,7 +105,6 @@ class SignUp extends Component{
     }
 
     addUser =() =>{
-        // alert('addUser method has been called...');
         fetch(`http://localhost:4000/users/add?firstname=${this.state.firstname}&lastname=${this.state.lastname}&username=${this.state.username}&email=${this.state.email}&password=${this.state.password}`)
         .catch(err => console.error(err))
     }
