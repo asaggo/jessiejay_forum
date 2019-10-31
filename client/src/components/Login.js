@@ -41,6 +41,10 @@ class Login extends Component{
         })
         .then(data =>{
             console.log(data)
+            if(data.status === 'success'){
+                alert('redirecting to the main page...');
+                this.props.history.push('/main');
+            }
         })
     }
 

@@ -35,30 +35,37 @@ app.post('/login', (req, res)=>{
     const pw = req.body.pw;
     console.log('username: ', un);
     console.log('password: ', pw);
-    res.json({
-        status: 'success',
-        username: un,
-        password: pw
-    })
+
     const FIND_USER_QUERY = `SELECT * FROM react_forum.user WHERE username = '${un}';`;
     
     connection.query(FIND_USER_QUERY, (err, result)=>{
         if(err){
             return res.send(err)
         }
+        
         console.log('Result: ', result);
+
+        // wrong username
         if(result.length === 0){
             console.log('Invalid username');
-            // return res.json(err);
+            res.json({
+                status: 'failed: invalid username'
+            })
         }
         else{
+            // correct username but wrong password
             if(result[0].password != pw){
                 console.log('Invalid password...');
-                // return res.json(err);
+                return res.json(err);
             }
+            // correct username and password
             else{
                 console.log('success');
-                return res.json({data:result})
+                res.json({
+                    status: 'success',
+                    return_data: result,
+                })
+                // return res.json({hello:result})
             }
         }
         
