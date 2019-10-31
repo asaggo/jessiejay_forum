@@ -116,8 +116,8 @@ class SignUp extends Component{
             event.stopPropagation();
         }
         else{
-            alert("thank you for registration, " + this.state.firstname);
             this.addUser();
+            alert("thank you for registration, " + this.state.firstname);
             this.props.history.push('/');
         }
         
