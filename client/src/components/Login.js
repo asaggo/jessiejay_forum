@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
 import './Login.css';
 
 
@@ -26,32 +25,28 @@ class Login extends Component{
 
     handleSubmit=(e)=>{
         e.preventDefault();
-        // console.log('username from the form: ', this.state.username);
-        const data = { 'username': `${this.state.username}`};
-
-        try{
-            const response = fetch('http://localhost:4000/login',{
-                method: 'POST',
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username: this.state.username})
-            })
-            .then(function(){
-                const json = response.json();
-                console.log('Success: ', JSON.stringify(json));
-            })
-            
-        }catch(err){
-            console.log(err);
+        const un = this.state.username;
+        const pw = this.state.password;
+        const data = {un, pw};
+        const option = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
         }
-
+        fetch('http://localhost:4000/login',option)
+        .then(response =>{
+            return response.json()
+        })
+        .then(data =>{
+            console.log(data)
+        })
     }
 
     render(){
         return(
-            <Form className="formWrapper" onSubmit={this.handleSubmit} method="post">
+            <Form className="formWrapper" onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Enter your Username</Form.Label>
                     <Form.Control 
